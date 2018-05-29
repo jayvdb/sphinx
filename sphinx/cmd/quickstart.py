@@ -31,7 +31,6 @@ try:
 except ImportError:
     pass
 
-from docutils.utils import column_width
 from six import PY2, PY3, text_type, binary_type
 from six.moves import input
 from six.moves.urllib.parse import quote as urlquote
@@ -392,7 +391,6 @@ def generate(d, overwrite=True, silent=False, templatedir=None):
     d['project_url'] = urlquote(d['project'].encode('idna'))
     d['project_manpage'] = d['project_fn'].lower()
     d['now'] = time.asctime()
-    d['project_underline'] = column_width(d['project']) * '='
     d.setdefault('extensions', [])
     d['copyright'] = time.strftime('%Y') + ', ' + d['author']
     d['author_texescaped'] = text_type(d['author']).\

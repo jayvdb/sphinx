@@ -1,3 +1,7 @@
+{% macro column_width(name) %}
+{%- for i in range(name|length) -%}={%- endfor -%}
+{% endmacro %}
+{% set project_underline = column_width(project) %}
 .. {{ project }} documentation master file, created by
    sphinx-quickstart on {{ now }}.
    You can adapt this file completely to your liking, but it should at least
